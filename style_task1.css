@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'iran sance';
+  src: url('/iransans/IRANSans.ttf') format('ttf'),
+}
+
+
+
+
+body{
+  font-family: 'iran sance';
+  padding: 0;
+  text-align: right;
+  margin: 0;
+}
+.container {
+  margin: 5% auto;
+  background-color: #f4f6fb;
+  border-radius: 5px;
+  padding-top: 1.5%;
+  direction:rtl;
+}
+.total {
+  margin-top: 1%;
+  border-radius: 7px;
+  background-color: white;
+}
+.Item2 {
+  border-left: 1px dashed #e6d6d6;
+  padding: 10px 5px;
+  text-align: right;
+}
+.new_tiket{
+  position:relative;
+  /* bottom:5px; */
+  padding:4px 5px;
+}
+
+.margin_auto {
+  margin-left: auto;
+  color: #2a2a2b;
+  font-weight: bold;
+  font-size: 18px;
+}
+.tiket {
+  background-color: #36459b;
+  color: white;
+
+  font-size: 14px;
+  border-radius: 7px;
+  align-items: center;
+  padding: 5px 2px;
+  padding: 8px 5px !important;
+}
+.Item {
+  background-color: white;
+  padding-bottom: 2%;
+}
+.title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.Icon {
+  margin-left: 7px;
+}
+.headpage {
+  padding-top: 7%;
+}
+.flex-item{
+  flex-basis:0;
+  flex-grow:1;
+}
+.align-self-end{
+  display:flex;
+  gap:7px;
+}
+
+.flex-item2 {
+  border-left: 1px dashed #a39d9d;
+  padding: 3px 10px;
+}
+select-style{
+  text-align:right;
+  
+  }
+  .Allselect{
+    margin-top: 20px;
+  }
+  .select2-selection__rendered {
+    
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(170, 166, 166, 0.5);
+   }
+   input{
+    width: 100%;
+    border: none;
+    line-height: 21px;
+    box-shadow: 0px 0px 10px 0px rgba(170, 166, 166, 0.5);
+    border-radius: 3px;
+    padding: 5px;
+   }
+  
+  .select2-dropdown {
+    background-color: #f9f9f9;
+    font-size: 14px;
+  }
+  .select-style select {
+  
+    width:100% !important; 
+    margin-bottom: 20px;
+  }
+  .select-style select[id^="e"] {
+    border: none !important;
+  
+  }
+  .select2-container--default .select2-selection--single{
+    margin-bottom: 20px !important;
+  }
+
+
+
+.select-style{
+  padding-right: 1px !important;
+  padding-left: 1px !important;
+}
+.select2 select2-container select2-container--default{
+  width: 50px !important;
+}
+.dt-search,.dt-length,.dt-column-order:first-child,.dt-layout-cell.dt-start{
+  display: none !important;
+}
+.dt-layout-cell.dt-end {
+  text-align: center !important;}
+.dt-paging-button{
+  padding: -0.5em 1em !important;
+}
+.dt-column-title{
+  color:#858588 !important;
+  text-align: unset !important;
+}
+.table.dataTable thead th{
+  font-weight:unset !important;
+}
+select2-container .select2-selection--single {
+border:none !important;
+
+}
+
+table {
+  
+  background-color: #ffffff  !important; /* رنگ سفید */
+}
+th{
+  font-size: 12px !important;
+}
+.select2-selection__rendered {
+  font-size: 14px !important;
+  color:#8C8C8C !important;
+}
+.select2-results__option--selectable {
+  color:#636366 !important;
+  font-size: 14px !important;
+}
+.select2-search__field{
+border:none !important;
+}
+.select2-results__option--selectable{
+margin-bottom: 20px;
+}
+.select2-container--open .select2-dropdown--below{
+  border: none important;
+  box-shadow: 0px 0px 10px 0px rgba(170, 166, 166, 0.5) !important;
+}
+.table {
+  width: unset !important;
+}
+colgroup col{
+  width: unset !important;
+  background-color: white !important;
+}
+.input-with-icon {
+  position: relative;
+
+}
+
+.input-with-icon i {
+  color:#8C8C8C;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width:990px) {
+
+  .flex-item {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Item2 {
+    flex-direction: column !important;
+    border: none;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px rgba(170, 166, 166, 0.5);
+  }
+  .flex-container {
+    flex-direction: row;
+  }
+  .total {
+    background-color: unset;
+  }
+  .Item2 {
+    background-color: white;
+    border-radius: 5px;
+  }
+  .flex-item{
+    flex-basis:unset;
+    flex-grow:unset;
+  }
+  .align-self-end{
+    display:unset;
+  
+    gap:unset;
+  }
+}
+@media screen and (max-width:760px) {
+  td, th {
+      display: block;
+      width:100%;
+      /* padding: 20px 50px; */
+  }
+  .Mytable{
+    width: 50% !important;
+    }
+  .select-style:last-child{
+    margin-top: 15px !important;
+  }
+}
+
