@@ -1,6 +1,5 @@
 <head>
   <script src="./jqury/jqury.js"></script>
-  <!-- <link rel="stylesheet" href="style_task1.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./DataTables/datatables.css">
     <script src="./DataTables/datatables.js"></script>
@@ -9,17 +8,29 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="style_task1.css" />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="assets/kamadatepicker.min.css"
-    />
     <link href="./select2-4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
      <script src="./select2-4.1.0-rc.0/dist/js/select2.min.js"></script>
      
+     <link rel="stylesheet" href="./datapicker/persian-datepicker.css"/>
+     <script src="./datapicker/datapicker.js"></script>
+     <script src="./datapicker/persian-datepicker.js"></script>
+
+
 
    <script>
-    
+    $(document).ready(function() {
+  $(".example1").pDatepicker({
+      initialValue: false
+    });
+  // $(".example2").ready(function() {
+  //   $(this).pDatepicker({
+  //     initialValue: false
+  //   });
+  // });
+});
+
+
+
         $(document).ready(function() { 
             $(".select-style select").each(function() {
                 $(this).select2({
@@ -31,29 +42,11 @@
             });
             $('#myTable').DataTable();
 
-
-//             changeCellColor <- function(row, col){
-//   c(
-//     "function(row, data, num, index){",
-//     sprintf("  if(index == %d){", row-1),
-//     sprintf("    $('td:eq(' + %d + ')', row)", col),
-//     "    .css({'background-color': 'orange !important'});",
-//     "  }",
-//     "}"  
-//   )
-// }
-// datatable(dat, 
-//           options = list(
-//             dom = "t",
-//             rowCallback = JS(changeCellColor(1, 2))
-//           )
-// )
-
-
-
-
-
         });
+
+
+        
+
     </script>
 
 </head>
@@ -186,7 +179,7 @@
                 <option value="AL">همه وضعیت ها</option>
             </select></div>
   <div class="col-lg-2 col-md-6 select-style inputdata">
-    <input type="text" placeholder="از تاریخ" name="" id="date1" class="Input"
+    <input type="text" placeholder="از تاریخ" name="" id="date1" class="example1 Input"
     " />
     <img src="./icon/calendar.svg" class="calendar-icon" />
   </div>
@@ -196,7 +189,7 @@
 
 
   <div class="col-lg-2 col-md-6 select-style selct">
-    <input type="text" placeholder="به تاریخ" name="" id="date1" class="Input Input2" />
+    <input type="text" id="date2" class="example1 Input Input2" placeholder="به تاریخ"/>
     <img src="./icon/calendar.svg" class="calendar-icon" />
   
   </div>
@@ -217,81 +210,82 @@
             <th>اعمال</th>
         </tr>
     </thead>
-    <tbody>
+
+    <tbody style="border-radius: 10px !important;">
         <tr>
-            <td>1</td>
-            <td>2152712</td>
-            <td>بشتیبانی</td>
-            <td>مشکلات تسک ۱۲۳</td>
-            <td>مرکزقلب بیمارستان شریعتی</td>
-            <td>بایین</td>
-            <td>۲۳/۷/۱۴۰۲</td>
-            <td><div class="d-flex flex-row">
+            <td data-label="#:">1</td>
+            <td data-label="شماره تیکت:">2152712</td>
+            <td data-label="بخش:">بشتیبانی</td>
+            <td data-label="عنوان:">مشکلات تسک ۱۲۳</td>
+            <td data-label="درخواست دهنده:">مرکزقلب بیمارستان شریعتی</td>
+            <td data-label="اولویت:">بایین</td>
+            <td data-label="به روز رسانی:">۱۴۰۲/۷/۲۳</td>
+            <td data-label="اعمال:"><div class="d-flex flex-row">
               <div>
                 <img src="./icon/edit-2.svg">
               </div>
               <div class="pr-3"><img src="./icon/info-circle.svg"></div></div></td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2152712</td>
-            <td>بشتیبانی</td>
-            <td>مشکلات تسک ۱۲۳</td>
-            <td>مرکزقلب بیمارستان شریعتی</td>
-            <td>بایین</td>
-          
-             <td>۲۳/۷/۱۴۰۲</td>
-             <td><div class="d-flex flex-row">
+          <td data-label="#:">1</td>
+          <td data-label="شماره تیکت:">2152712</td>
+          <td data-label="بخش:">بشتیبانی</td>
+          <td data-label="عنوان:">مشکلات تسک ۱۲۳</td>
+          <td data-label="درخواست دهنده:">مرکزقلب بیمارستان شریعتی</td>
+          <td data-label="اولویت:">بایین</td>
+          <td data-label="به روز رسانی:">۱۴۰۲/۷/۲۳</td>
+          <td data-label="اعمال:"><div class="d-flex flex-row">
               <div>
                 <img src="./icon/edit-2.svg">
               </div>
               <div class="pr-3"><img src="./icon/info-circle.svg"></div></div></td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2152712</td>
-            <td>بشتیبانی</td>
-            <td>مشکلات تسک ۱۲۳</td>
-            <td>مرکزقلب بیمارستان شریعتی</td>
-            <td>بایین</td>
-            <td>۲۳/۷/۱۴۰۲</td>
-            <td><div class="d-flex flex-row">
+          <td data-label="#:">1</td>
+          <td data-label="شماره تیکت:">2152712</td>
+          <td data-label="بخش:">بشتیبانی</td>
+          <td data-label="عنوان:">مشکلات تسک ۱۲۳</td>
+          <td data-label="درخواست دهنده:">مرکزقلب بیمارستان شریعتی</td>
+          <td data-label="اولویت:">بایین</td>
+          <td data-label="به روز رسانی:">۱۴۰۲/۷/۲۳</td>
+          <td data-label="اعمال:"><div class="d-flex flex-row">
               <div>
                 <img src="./icon/edit-2.svg">
               </div>
               <div class="pr-3"><img src="./icon/info-circle.svg"></div></div></td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2152712</td>
-            <td>بشتیبانی</td>
-            <td>مشکلات تسک ۱۲۳</td>
-            <td>مرکزقلب بیمارستان شریعتی</td>
-            <td>بایین</td>
-            <td>۲۳/۷/۱۴۰۲</td>
-            <td><div class="d-flex flex-row">
+          <td data-label="#:">1</td>
+          <td data-label="شماره تیکت:">2152712</td>
+          <td data-label="بخش:">بشتیبانی</td>
+          <td data-label="عنوان:">مشکلات تسک ۱۲۳</td>
+          <td data-label="درخواست دهنده:">مرکزقلب بیمارستان شریعتی</td>
+          <td data-label="اولویت:">بایین</td>
+          <td data-label="به روز رسانی:">۱۴۰۲/۷/۲۳</td>
+          <td data-label="اعمال:"><div class="d-flex flex-row">
               <div>
                 <img src="./icon/edit-2.svg">
               </div>
               <div class="pr-3"><img src="./icon/info-circle.svg"></div></div></td>
         </tr>
         <tr>
-            <td>1</td>
-            
-            <td>2152712</td>
-            <td>بشتیبانی</td>
-            <td>مشکلات تسک ۱۲۳</td>
-            <td>مرکزقلب بیمارستان شریعتی</td>
-            <td>بایین</td>
-            <td>۲۳/۷/۱۴۰۲</td>
-            <td><div class="d-flex flex-row">
+          <td data-label="#:">1</td>
+          <td data-label="شماره تیکت:">2152712</td>
+          <td data-label="بخش:">بشتیبانی</td>
+          <td data-label="عنوان:">مشکلات تسک ۱۲۳</td>
+          <td data-label="درخواست دهنده:">مرکزقلب بیمارستان شریعتی</td>
+          <td data-label="اولویت:">بایین</td>
+          <td data-label="به روز رسانی:">۱۴۰۲/۷/۲۳</td>
+          <td data-label="اعمال:"><div class="d-flex flex-row">
               <div>
                 <img src="./icon/edit-2.svg">
               </div>
               <div class="pr-3"><img src="./icon/info-circle.svg"></div></div></td>
         </tr>
     </tbody>
+
 </table>
+
 </div>
     </div>
 </div>
@@ -305,14 +299,9 @@ $(document).ready(function() {
         </svg>
     `);
 
-//     $(document).click(function(event) {
-//       $('.select2-container').find('svg').removeClass('rotated');
-// });
-
 });
 </script>
 <script>
-     kamaDatepicker("date1");
-     kamaDatepicker("date2");
+ 
 </script>
 </html>

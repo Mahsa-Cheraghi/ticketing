@@ -23,7 +23,6 @@ body {
   background-color: white;
 }
 .Item2 {
-  /* border-left: 1px dashed #e6d6d6; */
   padding: 10px 5px;
   text-align: right;
 }
@@ -55,7 +54,6 @@ body {
   padding-bottom: 2%;
 }
 .title {
-  /* height: 16px; */
   font-size: 16px;
   font-weight: bold;
 }
@@ -94,8 +92,12 @@ select-style {
   border-radius: 3px;
   padding: 5px;
   font-size: 16px;
+  color: #8c8c8c !important;
+  font-size: 14px;
 }
-
+.pwt-datepicker-input-element.calendar-icon {
+  display: none;
+}
 .select2-dropdown {
   background-color: #f9f9f9;
   font-size: 14px;
@@ -122,10 +124,17 @@ select-style {
 .select2 select2-container select2-container--default {
   width: 50px !important;
 }
-.dt-search,
+/* .dt-search,
 .dt-length,
-.dt-column-order:first-child,
-.dt-layout-cell.dt-start {
+.dt-column-order:first-child,.dt-layout-cell.dt-start 
+{
+  display: none !important;
+} */
+.dt-search,
+.dt-info {
+  display: none !important;
+}
+label {
   display: none !important;
 }
 .dt-layout-cell.dt-end {
@@ -312,14 +321,43 @@ table.dataTable > tbody > tr {
 .select2-search--dropdown .select2-search__field {
   padding-right: 23px !important;
 }
+.mytable thead {
+  background-color: rgba(244, 246, 251, 1);
+}
 
 @media (max-width: 990px) {
-  td,
+  div.dt-container select.dt-input {
+    top: 10px !important;
+  }
+  .select-style {
+    border-bottom: 1px solid rgba(178, 198, 227, 0.28);
+    border-left: unset;
+  }
+
+  .cssbox .select-style:first-child .select2-selection--single {
+    border-radius: 7px 7px 0px 0px;
+  }
+  .Input2 {
+    border-radius: 0px 0px 7px 7px;
+  }
+  .Mytable td,
   th {
     display: block;
     width: 100%;
   }
+  td::before {
+    content: attr(data-label);
+    float: right;
 
+    margin-right: 0.5em;
+  }
+  thead tr:first-child {
+    display: none !important;
+  }
+  tbody tr td:nth-child(1),
+  tbody tr td:nth-child(2) {
+    text-align: right !important;
+  }
   .flex-item {
     border-left: none;
     width: calc(50% - 10px);
@@ -352,6 +390,9 @@ table.dataTable > tbody > tr {
     flex-basis: unset;
     flex-grow: unset;
   }
+  .title {
+    font-size: 14px;
+  }
   .align-self-end {
     text-align: center !important;
     display: unset;
@@ -362,27 +403,88 @@ table.dataTable > tbody > tr {
   }
 }
 @media screen and (max-width: 760px) {
-  td,
+  .Mytable td,
   th {
     display: block;
     width: 100%;
+  }
+  tbody tr:first-child td {
+    border-bottom: 1px solid #dad0d0;
   }
 
   .select-style:last-child {
     margin-top: 15px !important;
   }
-  .select-style {
-    border-bottom: 1px solid rgba(178, 198, 227, 0.28);
-    border-left: unset;
-  }
+
   .Input2 {
     border-top: 1px solid rgba(178, 198, 227, 0.28);
     margin-top: -16px;
   }
-  .cssbox .select-style:first-child .select2-selection--single {
-    border-radius: 7px 7px 0px 0px;
+  .select2-selection__rendered {
+    font-size: 12px;
+    top: 10px;
   }
-  .Input2{
-    border-radius: 0px 0px 7px 7px;
-  }
+}
+div.dt-container select.dt-input {
+  color: rgba(140, 140, 140, 1);
+  position: relative;
+  top: 35px;
+  text-align: center !important;
+  padding: 0px;
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: rgba(230, 236, 246, 1) !important;
+}
+input:focus {
+  /* outline: none !important; */
+}
+.dt-paging-button {
+  background-color: white !important;
+  color: rgba(148, 158, 218, 1) !important;
+}
+div.dt-container .dt-paging .dt-paging-button.current,
+div.dt-container .dt-paging .dt-paging-button.current:hover {
+  border: none;
+  border: 1px solid rgba(148, 158, 218, 1) !important;
+  background-color: #fff;
+  color: rgba(148, 158, 218, 1) !important;
+}
+.dt-paging-button current {
+  color: rgba(148, 158, 218, 1) !important;
+}
+div.dt-container .dt-paging .dt-paging-button.current {
+  border-radius: 4px;
+}
+.div.dt-container .dt-paging .dt-paging-button.disabled {
+  color: rgba(148, 158, 218, 1) !important;
+}
+tbody {
+  border-radius: 4px;
+}
+
+div.dt-container .dt-paging .dt-paging-button.disabled,
+div.dt-container .dt-paging .dt-paging-button.disabled:hover {
+  color: rgba(140, 140, 140, 1) !important;
+}
+div.dt-container .dt-paging .dt-paging-button:active {
+  background-color: transparent !important;
+  border: 1px solid rgba(148, 158, 218, 1) !important;
+}
+div.dt-container .dt-paging .dt-paging-button:hover {
+  background: transparent !important;
+  border: 1px solid rgba(148, 158, 218, 1) !important;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+tr:first-child td:first-child {
+  /* border: 1px solid red; */
+  border-radius: 7px;
+}
+table.dataTable thead > tr > th.dt-orderable-asc:hover,
+table.dataTable thead > tr > th.dt-orderable-desc:hover {
+  outline: none !important;
 }
