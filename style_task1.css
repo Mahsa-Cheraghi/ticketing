@@ -124,12 +124,6 @@ select-style {
 .select2 select2-container select2-container--default {
   width: 50px !important;
 }
-/* .dt-search,
-.dt-length,
-.dt-column-order:first-child,.dt-layout-cell.dt-start 
-{
-  display: none !important;
-} */
 .dt-search,
 .dt-info {
   display: none !important;
@@ -310,10 +304,12 @@ div.dt-container .dt-paging .dt-paging-button:active {
 .cssbox .select-style:last-child .select2-selection--single {
   border-radius: 7px 0px 0px 7px;
 }
-table.dataTable > tbody > tr {
+/* table.dataTable > tbody > tr {
   background-color: white !important;
+} */
+table {
+  background-color: transparent !important;
 }
-
 #myTable td {
   background-color: #fff !important;
   box-shadow: none !important;
@@ -325,7 +321,7 @@ table.dataTable > tbody > tr {
   background-color: rgba(244, 246, 251, 1);
 }
 
-@media (max-width: 990px) {
+@media (max-width: 992px) {
   div.dt-container select.dt-input {
     top: 10px !important;
   }
@@ -394,15 +390,35 @@ table.dataTable > tbody > tr {
     font-size: 14px;
   }
   .align-self-end {
-    text-align: center !important;
-    display: unset;
-    gap: 7px;
+    position: relative;
+    right: 40%;
+    display: flex;
+    gap: 4px;
   }
   .svgimage {
     padding-bottom: 0px !important;
   }
 }
 @media screen and (max-width: 760px) {
+  #Mytable_wrapper tbody tr:first-of-type td{
+    border-top: none !important;
+  }
+  #Mytable_wrapper tbody tr td:first-of-type{
+    border-top: unset !important;
+  }
+  #Mytable_wrapper tbody tr td:first-of-type {
+    border-right: none !important;
+  }
+  #Mytable_wrapper tbody tr td:last-of-type {
+    border-left:none;
+}
+#Mytable_wrapper tbody tr td:first-of-type{
+  border-top:1px solid rgba(188, 195, 237, 0.35) !important;;
+}
+#Mytable_wrapper tbody tr td:last-of-type {
+  border-left:none !important;
+  border-bottom:none !important;
+}
   .Mytable td,
   th {
     display: block;
@@ -480,11 +496,46 @@ table {
   border-spacing: 0;
 }
 
-tr:first-child td:first-child {
-  /* border: 1px solid red; */
-  border-radius: 7px;
+#Mytable_wrapper table.dataTable {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+#Mytable_wrapper table.dataTable tbody tr:last-child {
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 table.dataTable thead > tr > th.dt-orderable-asc:hover,
 table.dataTable thead > tr > th.dt-orderable-desc:hover {
   outline: none !important;
+}
+
+#Mytable_wrapper td {
+  border-color: rgba(188, 195, 237, 0.35) !important;
+}
+#Mytable_wrapper thead th {
+  border: none;
+}
+
+#Mytable_wrapper tbody tr:first-of-type td {
+  border-top: 1px solid;
+}
+#Mytable_wrapper tbody tr td:first-of-type {
+  border-right: 1px solid;
+}
+#Mytable_wrapper tbody tr td:last-of-type {
+  border-left: 1px solid;
+}
+#Mytable_wrapper tbody tr:first-of-type td:first-of-type {
+  border-top-right-radius: 7px;
+}
+
+#Mytable_wrapper tbody tr:first-of-type td:last-of-type {
+  border-top-left-radius: 7px;
+}
+#Mytable_wrapper tbody tr:last-of-type td:first-of-type {
+  border-bottom-right-radius: 7px;
+}
+
+#Mytable_wrapper tbody tr:last-of-type td:last-of-type {
+  border-bottom-left-radius: 7px;
 }
