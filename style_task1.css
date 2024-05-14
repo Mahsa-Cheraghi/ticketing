@@ -322,25 +322,25 @@ table {
 }
 
 @media (max-width: 992px) {
-  #Mytable_wrapper tbody tr:first-of-type td{
+  #Mytable_wrapper tbody tr:first-of-type td {
     border-top: none !important;
   }
-  #Mytable_wrapper tbody tr td:first-of-type{
+  #Mytable_wrapper tbody tr td:first-of-type {
     border-top: unset !important;
   }
   #Mytable_wrapper tbody tr td:first-of-type {
     border-right: none !important;
   }
   #Mytable_wrapper tbody tr td:last-of-type {
-    border-left:none;
-}
-#Mytable_wrapper tbody tr td:first-of-type{
-  border-top:1px solid rgba(188, 195, 237, 0.35) !important;;
-}
-#Mytable_wrapper tbody tr td:last-of-type {
-  border-left:none !important;
-  border-bottom:none !important;
-}
+    border-left: none;
+  }
+  #Mytable_wrapper tbody tr td:first-of-type {
+    border-top: 1px solid rgba(188, 195, 237, 0.35) !important;
+  }
+  #Mytable_wrapper tbody tr td:last-of-type {
+    border-left: none !important;
+    border-bottom: none !important;
+  }
   div.dt-container select.dt-input {
     top: 10px !important;
   }
@@ -369,11 +369,18 @@ table {
   thead tr:first-child {
     display: none !important;
   }
-  tbody tr td:nth-child(1),
-  tbody tr td:nth-child(2) {
-    text-align: right !important;
+
+  tbody tr td:nth-child(2),
+  tbody tr td:nth-child(1) {
+    text-align: left !important;
   }
-  .flex-item {
+  tbody tr td {
+    text-align: left !important;
+  }
+  div.dt-container select.dt-input {
+    margin-bottom: 10px;
+  }
+  s .flex-item {
     border-left: none;
     width: calc(50% - 10px);
     margin-bottom: 10px;
@@ -419,7 +426,6 @@ table {
   }
 }
 @media screen and (max-width: 760px) {
-  
   .Mytable td,
   th {
     display: block;
@@ -452,9 +458,7 @@ div.dt-container select.dt-input {
   background-color: #fff;
   border-radius: rgba(230, 236, 246, 1) !important;
 }
-input:focus {
-  /* outline: none !important; */
-}
+
 .dt-paging-button {
   background-color: white !important;
   color: rgba(148, 158, 218, 1) !important;
